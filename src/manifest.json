@@ -1,6 +1,6 @@
 {
-  "name": "Stencil Starter",
-  "short_name": "Stencil",
+  "name": "Simon Says",
+  "short_name": "Simon Says",
   "start_url": "/",
   "display": "standalone",
   "icons": [{
