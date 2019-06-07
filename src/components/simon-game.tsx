@@ -8,7 +8,7 @@ export class SimonGame {
   render() {
     return (
       <stencil-router root="/simonsays/">
-          
+          <stencil-route url='/' component='simon-tiles'></stencil-route> 
       </stencil-router>
     );
   }
