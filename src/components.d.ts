@@ -7,56 +7,61 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
-  MatchResults,
+  RouterHistory,
 } from '@stencil/router';
 
 
 export namespace Components {
-  interface AppHome {}
-  interface AppProfile {
-    'match': MatchResults;
+  interface SimonGame {}
+  interface SimonTiles {
+    'animationPattern': number[];
   }
-  interface AppRoot {}
+  interface SnGame {
+    'history': RouterHistory;
+  }
 }
 
 declare global {
 
 
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
+  interface HTMLSimonGameElement extends Components.SimonGame, HTMLStencilElement {}
+  var HTMLSimonGameElement: {
+    prototype: HTMLSimonGameElement;
+    new (): HTMLSimonGameElement;
   };
 
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
+  interface HTMLSimonTilesElement extends Components.SimonTiles, HTMLStencilElement {}
+  var HTMLSimonTilesElement: {
+    prototype: HTMLSimonTilesElement;
+    new (): HTMLSimonTilesElement;
   };
 
-  interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
-  var HTMLAppRootElement: {
-    prototype: HTMLAppRootElement;
-    new (): HTMLAppRootElement;
+  interface HTMLSnGameElement extends Components.SnGame, HTMLStencilElement {}
+  var HTMLSnGameElement: {
+    prototype: HTMLSnGameElement;
+    new (): HTMLSnGameElement;
   };
   interface HTMLElementTagNameMap {
-    'app-home': HTMLAppHomeElement;
-    'app-profile': HTMLAppProfileElement;
-    'app-root': HTMLAppRootElement;
+    'simon-game': HTMLSimonGameElement;
+    'simon-tiles': HTMLSimonTilesElement;
+    'sn-game': HTMLSnGameElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface AppHome extends JSXBase.HTMLAttributes<HTMLAppHomeElement> {}
-  interface AppProfile extends JSXBase.HTMLAttributes<HTMLAppProfileElement> {
-    'match'?: MatchResults;
+  interface SimonGame extends JSXBase.HTMLAttributes<HTMLSimonGameElement> {}
+  interface SimonTiles extends JSXBase.HTMLAttributes<HTMLSimonTilesElement> {
+    'animationPattern'?: number[];
+    'onGamepadTouched'?: (event: CustomEvent<any>) => void;
   }
-  interface AppRoot extends JSXBase.HTMLAttributes<HTMLAppRootElement> {}
+  interface SnGame extends JSXBase.HTMLAttributes<HTMLSnGameElement> {
+    'history'?: RouterHistory;
+  }
 
   interface IntrinsicElements {
-    'app-home': AppHome;
-    'app-profile': AppProfile;
-    'app-root': AppRoot;
+    'simon-game': SimonGame;
+    'simon-tiles': SimonTiles;
+    'sn-game': SnGame;
   }
 }
 

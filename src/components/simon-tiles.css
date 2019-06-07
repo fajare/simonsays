@@ -1,0 +1,31 @@
+.cont{
+    display:grid;  
+    width: 100vw;
+    height: 80vw;
+    max-width:500px;
+    max-height:400px;
+    grid-template-columns: 40% 40%;
+    grid-template-rows: auto;
+    grid-gap:5px 5px;
+    justify-content: center;
+}
+.tile{
+    border: 0;
+}
+
+.tile1 {
+    border-top-left-radius: 75%;
+    background:yellow;
+}
+.tile2 {
+    border-top-right-radius: 75%;
+    background: red;
+}
+.tile3 {
+    border-bottom-left-radius: 75%;
+    background: green;
+}
+.tile4 {
+    border-bottom-right-radius: 75%;
+    background: blue;
+}
