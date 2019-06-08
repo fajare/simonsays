@@ -21,7 +21,7 @@ export class SimonTiles{
     }
 
     @Event()
-    gamepadTouched: EventEmitter;
+    tileClicked: EventEmitter;
 
     @Listen('animationiteration')
     blinkFinished() {
@@ -38,7 +38,7 @@ export class SimonTiles{
             if (this.isPlaying) {
                 tiles.push(<button class={ status }></button>);
             } else {
-                tiles.push(<button onClick={ () => this.gamepadTouched.emit(i) } class={ status }></button>);
+                tiles.push(<button onClick={ () => this.tileClicked.emit(i) } class={ status }></button>);
             }     
         }
         return(

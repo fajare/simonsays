@@ -13,11 +13,12 @@ import {
 
 export namespace Components {
   interface SimonGame {}
+  interface SimonMain {
+    'history': RouterHistory;
+    'loss': boolean;
+  }
   interface SimonTiles {
     'animationPattern': number[];
-  }
-  interface SnGame {
-    'history': RouterHistory;
   }
 }
 
@@ -30,38 +31,39 @@ declare global {
     new (): HTMLSimonGameElement;
   };
 
+  interface HTMLSimonMainElement extends Components.SimonMain, HTMLStencilElement {}
+  var HTMLSimonMainElement: {
+    prototype: HTMLSimonMainElement;
+    new (): HTMLSimonMainElement;
+  };
+
   interface HTMLSimonTilesElement extends Components.SimonTiles, HTMLStencilElement {}
   var HTMLSimonTilesElement: {
     prototype: HTMLSimonTilesElement;
     new (): HTMLSimonTilesElement;
   };
-
-  interface HTMLSnGameElement extends Components.SnGame, HTMLStencilElement {}
-  var HTMLSnGameElement: {
-    prototype: HTMLSnGameElement;
-    new (): HTMLSnGameElement;
-  };
   interface HTMLElementTagNameMap {
     'simon-game': HTMLSimonGameElement;
+    'simon-main': HTMLSimonMainElement;
     'simon-tiles': HTMLSimonTilesElement;
-    'sn-game': HTMLSnGameElement;
   }
 }
 
 declare namespace LocalJSX {
   interface SimonGame extends JSXBase.HTMLAttributes<HTMLSimonGameElement> {}
+  interface SimonMain extends JSXBase.HTMLAttributes<HTMLSimonMainElement> {
+    'history'?: RouterHistory;
+    'loss'?: boolean;
+  }
   interface SimonTiles extends JSXBase.HTMLAttributes<HTMLSimonTilesElement> {
     'animationPattern'?: number[];
-    'onGamepadTouched'?: (event: CustomEvent<any>) => void;
-  }
-  interface SnGame extends JSXBase.HTMLAttributes<HTMLSnGameElement> {
-    'history'?: RouterHistory;
+    'onTileClicked'?: (event: CustomEvent<any>) => void;
   }
 
   interface IntrinsicElements {
     'simon-game': SimonGame;
+    'simon-main': SimonMain;
     'simon-tiles': SimonTiles;
-    'sn-game': SnGame;
   }
 }
 
